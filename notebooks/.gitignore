@@ -1,0 +1,18 @@
+# Build script artefacts
+_build_log.txt
+_build_notebooks.py
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual envs
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/

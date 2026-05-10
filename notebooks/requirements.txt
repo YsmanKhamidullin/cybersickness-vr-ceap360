@@ -1,0 +1,27 @@
+# Работа с данными
+pandas>=2.0
+numpy>=1.24
+scipy>=1.11
+
+# Классические ML
+scikit-learn>=1.4
+xgboost>=2.0
+lightgbm>=4.0
+
+# Глубокое обучение (LSTM / BiLSTM)
+torch>=2.1
+
+# Обработка физиологических сигналов
+neurokit2>=0.2.7
+
+# Интерпретация моделей (опционально — XGBoost имеет нативный механизм SHAP)
+shap>=0.44
+
+# Визуализация
+matplotlib>=3.8
+seaborn>=0.13
+
+# Jupyter
+jupyter>=1.0
+ipykernel>=6.0
+nbformat>=5.0

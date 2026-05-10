@@ -1,0 +1,3 @@
+x,y,pearson_r,pearson_p,spearman_r,spearman_p
+mean_arousal,ssq_post_total,-0.0178,0.9229,0.0156,0.9326
+mean_arousal,ssq_delta,-0.1209,0.51,-0.0727,0.6925

@@ -1,0 +1,7 @@
+,,accuracy,accuracy,f1_macro,f1_macro,auc_roc,auc_roc
+,,mean,std,mean,std,mean,std
+model,strategy,,,,,,
+LogReg,LOSO,0.5961,0.0815,0.545,0.0905,0.6877,0.057
+LogReg,SD_5fold,0.6486,0.0066,0.6194,0.01,0.6869,0.0072
+RF,LOSO,0.6322,0.0661,0.5748,0.0795,0.6773,0.0775
+RF,SD_5fold,0.8475,0.0069,0.8387,0.0078,0.9328,0.0049

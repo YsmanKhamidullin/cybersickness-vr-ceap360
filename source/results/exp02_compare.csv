@@ -1,0 +1,9 @@
+model,strategy,accuracy_exp01,f1_exp01,auc_exp01,accuracy_exp02,f1_exp02,auc_exp02,Δacc,Δf1,Δauc
+LightGBM,LOSO,,,,0.629,0.6018,0.6639,,,
+LightGBM,SD_5fold,,,,0.8402,0.834,0.9215,,,
+LogisticRegression,LOSO,0.5961,0.545,0.6877,0.6345,0.608,0.6738,0.0384,0.063,-0.0139
+LogisticRegression,SD_5fold,0.6486,0.6194,0.6869,0.6624,0.64,0.7009,0.0138,0.0206,0.014
+RandomForest,LOSO,0.6322,0.5748,0.6773,0.6526,0.6189,0.6945,0.0204,0.0441,0.0172
+RandomForest,SD_5fold,0.8475,0.8387,0.9328,0.7997,0.787,0.8857,-0.0478,-0.0517,-0.0471
+XGBoost,LOSO,,,,0.6287,0.602,0.6664,,,
+XGBoost,SD_5fold,,,,0.8198,0.8123,0.9012,,,

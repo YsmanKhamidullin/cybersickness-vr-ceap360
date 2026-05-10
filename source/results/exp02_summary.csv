@@ -1,0 +1,11 @@
+,,accuracy,accuracy,f1_macro,f1_macro,auc_roc,auc_roc
+,,mean,std,mean,std,mean,std
+model,strategy,,,,,,
+LightGBM,LOSO,0.629,0.0679,0.6018,0.077,0.6639,0.0824
+LightGBM,SD_5fold,0.8402,0.006,0.834,0.007,0.9215,0.0021
+LogisticRegression,LOSO,0.6345,0.0643,0.608,0.0648,0.6738,0.0782
+LogisticRegression,SD_5fold,0.6624,0.0064,0.64,0.0063,0.7009,0.0049
+RandomForest,LOSO,0.6526,0.0676,0.6189,0.0719,0.6945,0.0824
+RandomForest,SD_5fold,0.7997,0.0084,0.787,0.0095,0.8857,0.006
+XGBoost,LOSO,0.6287,0.067,0.602,0.076,0.6664,0.0825
+XGBoost,SD_5fold,0.8198,0.0079,0.8123,0.0081,0.9012,0.0035

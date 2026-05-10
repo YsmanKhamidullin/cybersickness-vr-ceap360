@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Build artefacts
+_build_log.txt
+_build_notebooks.py
+
+# Dataset (распространяется отдельно; см. README)
+CEAP-360VR-Dataset-master/
