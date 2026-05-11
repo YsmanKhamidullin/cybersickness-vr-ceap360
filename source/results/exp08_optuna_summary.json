@@ -1,0 +1,61 @@
+{
+  "default": {
+    "XGBoost block": {
+      "acc": 0.7188,
+      "f1": 0.7046,
+      "auc": 0.7698
+    },
+    "RF window": {
+      "acc": 0.6526,
+      "f1": 0.6189,
+      "auc": 0.6945
+    },
+    "LSTM window": {
+      "acc": 0.6115,
+      "f1": 0.6007,
+      "auc": 0.6563
+    }
+  },
+  "tuned": {
+    "XGBoost block": {
+      "acc": 0.625,
+      "f1": 0.6,
+      "auc": 0.6944444444444444
+    },
+    "RF window": {
+      "acc": 0.6589645127118644,
+      "f1": 0.6248665624649491,
+      "auc": 0.7024692769231755
+    },
+    "LSTM window": {
+      "acc": 0.637890625,
+      "f1": 0.6282399144592632,
+      "auc": 0.6965146372531545
+    }
+  },
+  "best_hp": {
+    "XGBoost block": {
+      "n_estimators": "median=200.0  range=[50..400]",
+      "max_depth": "median=6.0  range=[3..6]",
+      "learning_rate": "median=0.2521511680920944  range=[0.06504856968981275..0.298193695107655]",
+      "subsample": "median=0.9729161367647149  range=[0.8394633936788146..0.996951716289459]",
+      "colsample_bytree": "median=0.5780093202212182  range=[0.5076838686640521..0.8285726521637807]",
+      "reg_lambda": "median=0.11952270129143856  range=[0.100192168606412..2.171949831037908]",
+      "min_child_weight": "median=1.0  range=[1..2]"
+    },
+    "RF window": {
+      "n_estimators": "median=350.0  range=[100..500]",
+      "max_depth": "median=15.0  range=[10.0..20.0]",
+      "min_samples_leaf": "median=7.0  range=[2..10]",
+      "max_features": "most common=sqrt (22/32)"
+    },
+    "LSTM window": {
+      "epochs": "median=5.0  range=[5..11]",
+      "hidden": "median=64.0  range=[64..256]",
+      "n_layers": "median=1.0  range=[1..2]",
+      "dropout": "median=0.3524024301776768  range=[0.11968935205247816..0.49616478092692684]",
+      "lr": "median=0.000653055515858278  range=[0.00010160616259975638..0.0029596330270800887]",
+      "batch": "median=128.0  range=[128..256]"
+    }
+  }
+}
