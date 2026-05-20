@@ -55,16 +55,16 @@ notebooks/
 │   ├── validation.py           # сплиттеры (LOSO/SD/LOVO) + метрики классификации
 │   ├── experiments.py          # фабрики моделей (RF/XGB/LGBM/LR) + per-subject + block + ablation
 │   └── deep.py                 # LSTM/BiLSTM, build_sequences, train_fold
-├── 01_data_loading.ipynb       # загрузка датасета, отчёт о качестве (раздел 3.1)
-├── 02_feature_extraction.ipynb # окна 2с/50%, 145 признаков (раздел 3.1)
-├── 03_eda_targets.ipynb        # EDA SSQ и arousal (раздел 3.1)
-├── 04_exp01_baseline.ipynb     # baseline LR/RF, SD vs LOSO (раздел 3.2)
-├── 05_exp02_per_subject.ipynb  # per-subject + XGB/LGBM (раздел 3.3)
-├── 06_exp03_ssq_block.ipynb    # block-level SSQ — главный результат (раздел 3.4)
-├── 07_exp04_ablations.ipynb    # модальности / каналы / типы статистик (раздел 3.5)
-├── 08_exp05_shap.ipynb         # SHAP-интерпретация (раздел 3.6.1)
-├── 09_exp06_deep.ipynb         # LSTM/BiLSTM (раздел 3.6.2)
-└── 10_stat_tests.ipynb         # Wilcoxon + McNemar + Holm (раздел 3.6.4)
+├── 01_data_loading.ipynb       # загрузка датасета, отчёт о качестве 
+├── 02_feature_extraction.ipynb # окна 2с/50%, 145 признаков
+├── 03_eda_targets.ipynb        # EDA SSQ и arousal
+├── 04_exp01_baseline.ipynb     # baseline LR/RF, SD vs LOSO 
+├── 05_exp02_per_subject.ipynb  # per-subject + XGB/LGBM
+├── 06_exp03_ssq_block.ipynb    # block-level SSQ — главный результат 
+├── 07_exp04_ablations.ipynb    # модальности / каналы / типы статистик 
+├── 08_exp05_shap.ipynb         # SHAP-интерпретация 
+├── 09_exp06_deep.ipynb         # LSTM/BiLSTM 
+└── 10_stat_tests.ipynb         # Wilcoxon + McNemar + Holm 
 ```
 
 ## Запуск
