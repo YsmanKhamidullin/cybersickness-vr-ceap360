@@ -14,8 +14,7 @@ Sickness Questionnaire (SSQ) в качестве целевой метрики.
 ## Главный результат
 
 **XGBoost block-level — LOSO accuracy 0,7188** (F1 0,7046, AUC 0,7698) при
-предсказании клинически значимого SSQ Total Score > 15. Превосходит
-опубликованный CEAP-360VR baseline (0,6426) на **+7,6 п.п.**
+предсказании клинически значимого SSQ Total Score > 15.
 
 ## Датасет
 
@@ -68,29 +67,6 @@ notebooks/
 └── 10_stat_tests.ipynb         # Wilcoxon + McNemar + Holm (раздел 3.6.4)
 ```
 
-Каталоги вне `notebooks/`:
-
-- `source/results/feature_table.csv` — основная признаковая матрица (15 104 × 156),
-  строится ноутбуком 02 при отсутствии и затем переиспользуется.
-- `source/results/exp*.csv` — метрики каждого эксперимента (генерируются ноутбуками).
-- `source/results/figures/fig01..fig14.png` — графики для диплома (генерируются
-  ноутбуками 03, 07, 08).
-
-## Соответствие ноутбуков разделам диплома
-
-| № | Ноутбук | Раздел | Главное число |
-|---|---|---|---|
-| 1 | `01_data_loading.ipynb` | 3.1 | 32 участника, частота 25 Гц |
-| 2 | `02_feature_extraction.ipynb` | 3.1, гл. 2.3 | 15 104 окна × 145 признаков |
-| 3 | `03_eda_targets.ipynb` | 3.1 | SSQ > 15 у 14/32; |r| ≤ 0,16 признаков с arousal |
-| 4 | `04_exp01_baseline.ipynb` | 3.2 | RF LOSO = 0,6322 (≈ baseline 0,6426) |
-| 5 | `05_exp02_per_subject.ipynb` | 3.3 | RF LOSO = **0,6526** (+1,0 п.п. baseline) |
-| 6 | `06_exp03_ssq_block.ipynb` | 3.4 | XGBoost block = **0,7188** (+7,6 п.п. baseline) |
-| 7 | `07_exp04_ablations.ipynb` | 3.5 | eye-only ≡ combined; pupil — единственный критичный канал |
-| 8 | `08_exp05_shap.ipynb` | 3.6.1 | left_pupil_deriv_mean_std \|SHAP\| = 1,31 (×4,5 от следующего) |
-| 9 | `09_exp06_deep.ipynb` | 3.6.2 | LSTM = 0,6115, BiLSTM = 0,6123 (оба < RF) |
-| 10 | `10_stat_tests.ipynb` | 3.6.4 | RF vs XGB p_holm = 0,023; RF vs LSTM p = 0,30 (н/з); eye ≡ combined p = 0,25 |
-
 ## Запуск
 
 ```bash
@@ -106,15 +82,6 @@ pip install pandas numpy scipy scikit-learn xgboost lightgbm torch matplotlib se
 cd notebooks
 jupyter lab
 ```
-
-Зависимости между ноутбуками:
-
-- **01 → 02**: 01 проверяет данные; 02 строит `feature_table.csv` (~2 минуты).
-- **03–10 от 02**: используют готовый `feature_table.csv`. После одного прогона 02
-  любой ноутбук 04–10 запускается независимо.
-- 07 (абляции) ~10 минут, 09 (LSTM/BiLSTM) ~5 минут на CPU.
-- 10 (статтесты) ~1 мин если `exp07_*_perfold.csv` уже существуют (созданы 07 и 09);
-  иначе ~7 мин (перезапускает LSTM/BiLSTM и абляции с сохранением per-fold скоров).
 
 ## Импорты в ноутбуках
 
@@ -132,21 +99,7 @@ from modules import config
 from modules.experiments import make_xgboost_block, build_block_level_dataset
 ```
 
-## Воспроизводимость
-
 Зафиксированный `RANDOM_SEED = 42` для всех моделей и сплитов.
-Числа в ноутбуках совпадают bit-to-bit с CSV-метриками в `source/results/`:
-
-- `04_exp01_baseline` ↔ `exp01_metrics.csv`, `exp01_summary.csv`
-- `05_exp02_per_subject` ↔ `exp02_metrics.csv`, `exp02_summary.csv`
-- `06_exp03_ssq_block` ↔ `exp03_metrics.csv`, `exp03_predictions.csv`,
-  `exp03_correlation.csv`, `exp03_block_features.csv`
-- `07_exp04_ablations` ↔ `exp04_ablation.csv`
-- `08_exp05_shap` ↔ `exp05_shap_top20.csv`
-- `09_exp06_deep` ↔ `exp06_deep_metrics.csv`
-- `10_stat_tests` ↔ `exp07_wilcoxon_window_holm.csv`, `exp07_mcnemar.csv`,
-  `exp07_wilcoxon_ablation.csv`, `exp07_ablation_perfold.csv`,
-  `exp07_deep_perfold.csv`
 
 ## Технологии
 
